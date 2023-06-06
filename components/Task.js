@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     del: {
         width: 20,
         height: 20,
-        marginLeft: 265,
+        marginLeft: 235,
         marginTop: 2.5
     },
     top: {
