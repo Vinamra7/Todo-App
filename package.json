@@ -16,7 +16,8 @@
     "react-native": "0.71.8",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-redux": "^8.0.7",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

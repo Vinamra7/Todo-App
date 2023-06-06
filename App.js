@@ -1,8 +1,9 @@
 // App.js
 import React from 'react';
 import { Provider } from 'react-redux';
-import { StyleSheet, Text, View, Image, PixelRatio } from 'react-native';
-import store from './store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import store, { persistor } from './store';
 import Title from './components/Title';
 import Description from './components/Description';
 import Task from './components/Task';
@@ -15,18 +16,21 @@ const TaskDetails = () => {
 const App = () => {
     return (
         <Provider store={store}>
-            <KeyboardAwareScrollView>
-                <View>
-                    <TaskDetails />
-                    <Title />
-                    <Description />
-                    <Image source={require('./assets/avatar.png')} style={styles.ava} alt='avatar' />
-                    <Task />
-                </View>
-            </KeyboardAwareScrollView>
+            <PersistGate loading={null} persistor={persistor}>
+                <KeyboardAwareScrollView>
+                    <View>
+                        <TaskDetails />
+                        <Title />
+                        <Description />
+                        <Image source={require('./assets/avatar.png')} style={styles.ava} alt='avatar' />
+                        <Task />
+                    </View>
+                </KeyboardAwareScrollView>
+            </PersistGate>
         </Provider>
     );
 };
+
 
 
 const styles = StyleSheet.create({
